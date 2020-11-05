@@ -9,7 +9,7 @@ namespace PhasmophobiaPotatoGUI
         {
             if (Main.player != null)
             {
-                GUI.Label(new Rect(10f, 100f, 150f, 20f), "SpeedHack: " + Menu.SpeedHack);
+                //GUI.Label(new Rect(10f, 100f, 150f, 20f), "SpeedHack: " + Menu.SpeedHack);
                 if (Menu.SpeedHack)
                 {
                     Main.player.field_Public_FirstPersonController_0.m_WalkSpeed = 4.5f;
