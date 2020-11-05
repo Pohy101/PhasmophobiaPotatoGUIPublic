@@ -261,48 +261,48 @@ namespace PhasmophobiaPotatoGUI
             //}
         }
 
-        public static bool GhostESP = true;
+        public static bool GhostESP = false;
 
-        public static bool PlayerESP = true;
+        public static bool PlayerESP = false;
 
-        public static bool KeyESP = true;
+        public static bool KeyESP = false;
 
-        public static bool OuijaESP = true;
+        public static bool OuijaESP = false;
 
-        public static bool EvidenceESP = true;
+        public static bool EvidenceESP = false;
 
-        public static bool FuseboxESP = true;
+        public static bool FuseboxESP = false;
 
-        public static bool ShowInfoGhost = true;
+        public static bool ShowInfoGhost = false;
 
-        public static bool ShowInfoPlayer = true;
+        public static bool ShowInfoPlayer = false;
 
-        public static bool showMissionInfo = true;
+        public static bool showMissionInfo = false;
 
-        public static bool SpeedHack = true;
+        public static bool SpeedHack = false;
 
-        public static bool fullbrighttoggle = true;
+        public static bool fullbrighttoggle = false;
 
         private static void hudToggles()
         {
             GUI.Label(new Rect(920f, 295f, 200f, 20f), "ESP:");
-            if (GUI.Toggle(new Rect(920f, 320f, 200f, 20f), GhostESP, "Ghost") != GhostESP)
+            if (GUI.Toggle(new Rect(920f, 320f, 200f, 20f), GhostESP, "Призрак") != GhostESP)
             {
                 GhostESP = !GhostESP;
             }
-            if (GUI.Toggle(new Rect(920f, 370f, 200f, 20f), PlayerESP, "Player") != PlayerESP)
+            if (GUI.Toggle(new Rect(920f, 370f, 200f, 20f), PlayerESP, "Игрок") != PlayerESP)
             {
                 PlayerESP = !PlayerESP;
             }
-            if (GUI.Toggle(new Rect(920f, 395f, 200f, 20f), OuijaESP, "Ouija Board") != OuijaESP)
+            if (GUI.Toggle(new Rect(920f, 395f, 200f, 20f), OuijaESP, "Доска Уиджи") != OuijaESP)
             {
                 OuijaESP = !OuijaESP;
             }
-            if (GUI.Toggle(new Rect(920f, 420f, 200f, 20f), KeyESP, "Key") != KeyESP)
+            if (GUI.Toggle(new Rect(920f, 420f, 200f, 20f), KeyESP, "Ключи") != KeyESP)
             {
                 KeyESP = !KeyESP;
             }
-            if (GUI.Toggle(new Rect(920f, 445f, 200f, 20f), EvidenceESP, "Evidence") != EvidenceESP)
+            if (GUI.Toggle(new Rect(920f, 445f, 200f, 20f), EvidenceESP, "Доказательства") != EvidenceESP)
             {
                 EvidenceESP = !EvidenceESP;
             }
@@ -318,8 +318,8 @@ namespace PhasmophobiaPotatoGUI
                 FullBright.changeBright();
             }
             
-            GUI.Label(new Rect(740f, 145f, 200f, 20f), "Lights:");
-            if (GUI.Button(new Rect(740f, 175f, 200f, 20f), "All Lights On"))
+            GUI.Label(new Rect(740f, 145f, 200f, 20f), "Свет:");
+            if (GUI.Button(new Rect(740f, 175f, 200f, 20f), "Вкл весь свет"))
             {
                 foreach (LightSwitch lightSwitch1 in Main.lightSwitches)
                 {
@@ -327,7 +327,7 @@ namespace PhasmophobiaPotatoGUI
                     lightSwitch1.TurnOnNetworked(true);
                 }
             }
-            if (GUI.Button(new Rect(740f, 195f, 200f, 20f), "All Lights Off"))
+            if (GUI.Button(new Rect(740f, 195f, 200f, 20f), "Выкл весь свет"))
             {
                 foreach (LightSwitch lightSwitch2 in Main.lightSwitches)
                 {
@@ -347,6 +347,10 @@ namespace PhasmophobiaPotatoGUI
             if (GUI.Toggle(new Rect(1120f, 200f, 200f, 20f), showMissionInfo, "Show Player Info") != showMissionInfo)
             {
                 showMissionInfo = !showMissionInfo;
+            }
+            if (GUI.Toggle(new Rect(1120f, 150f, 200f, 20f), showItemList, "Show Item List") != showItemList)
+            {
+                showItemList = !showItemList;
             }
         }
 
